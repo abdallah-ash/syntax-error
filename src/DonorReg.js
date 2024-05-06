@@ -13,7 +13,15 @@ const initialFormData = {
   governorate: "",
   type: "",
 };
+
 function RegistrationForm() {
+  const [clinicAddress, setClinicAddress] = useState("");
+  const [area, setArea] = useState("");
+  const [governorate, setGovernorate] = useState("");
+  const [googleMarker, setGoogleMarker] = useState("");
+  const [specialty, setSpecialty] = useState("");
+  const [proBonoCases, setProBonoCases] = useState("");
+
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState(initialFormData);
 
@@ -203,20 +211,114 @@ function RegistrationForm() {
       case 3:
         return (
           <>
-            <input
-              type="text"
-              name="age"
-              value={formData.age}
-              onChange={handleChange}
-              placeholder="Age"
-            />
-            <input
-              type="text"
-              name="occupation"
-              value={formData.occupation}
-              onChange={handleChange}
-              placeholder="Occupation"
-            />
+            {formData.type === "doctor" && (
+              <>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={clinicAddress}
+                    onChange={(e) => setClinicAddress(e.target.value)}
+                    placeholder="Enter clinic address"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={area}
+                    onChange={(e) => setArea(e.target.value)}
+                    placeholder="Enter the area"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={governorate}
+                    onChange={(e) => setGovernorate(e.target.value)}
+                    placeholder="Enter governorate"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={googleMarker}
+                    onChange={(e) => setGoogleMarker(e.target.value)}
+                    placeholder="Enter Google Maps marker or coordinates"
+                  />
+                </div>
+                <div className="form-group">
+                  <select
+                    className="form-control"
+                    value={specialty}
+                    onChange={(e) => setSpecialty(e.target.value)}
+                  >
+                    <option value="">Select your specialty</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="orthopedics">Orthopedics</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label>Pro-Bono Cases:</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={proBonoCases}
+                    onChange={(e) => setProBonoCases(e.target.value)}
+                    placeholder="Number of pro-bono cases you can take"
+                    min="0"
+                  />
+                </div>
+              </>
+            )}
+            {formData.type === "teacher" && (
+              <>
+                <div>
+                  <div className="form-group">
+                    <label>Subjects you can teach:</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="subjects"
+                      value={formData.subjects}
+                      onChange={handleChange}
+                      placeholder="e.g., Mathematics, Science"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Number of pro-bono classes you can offer:</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="proBonoClasses"
+                      value={formData.proBonoClasses}
+                      onChange={handleChange}
+                      min="0"
+                      placeholder="Number of classes"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>
+                      Number of pro-bono students you can tutor privately:
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="proBonoStudents"
+                      value={formData.proBonoStudents}
+                      onChange={handleChange}
+                      min="0"
+                      placeholder="Number of students"
+                    />
+                  </div>
+                </div>
+              </>
+            )}
           </>
         );
       default:
