@@ -4,11 +4,24 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import DonorReg from "./DonorReg";
+import DonorMain from "./DonorMain";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <DonorReg />
-  </React.StrictMode>
+  <div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<DonorReg />} />
+        <Route path="/donor" element={<DonorMain />} />
+        {/* Add other routes as needed */}
+      </Routes>
+    </Router>
+  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function

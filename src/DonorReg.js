@@ -1,18 +1,8 @@
 import "./index.css";
 import React, { useEffect, useState } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
-import { type } from "@testing-library/user-event/dist/type";
-const initialFormData = {
-  fname: "",
-  lname: "",
-  email: "",
-  phone: "",
-  password: "",
-  address: "",
-  area: "",
-  governorate: "",
-  type: "",
-};
+import { Navigate, useNavigate } from "react-router-dom";
+import initialFormData from "./db";
 
 function RegistrationForm() {
   const [clinicAddress, setClinicAddress] = useState("");
@@ -27,6 +17,12 @@ function RegistrationForm() {
 
   const [file, setFile] = useState(null); // State to hold the file
   const [preview, setPreview] = useState("");
+  const Navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    Navigate("/donor", { state: { formData } });
+  };
 
   useEffect(() => {
     if (file) {
@@ -328,7 +324,7 @@ function RegistrationForm() {
 
   return (
     <div className="registration-background">
-      <form className="registration-form">
+      <form className="registration-form" onSubmit={handleSubmit}>
         <ProgressBar completed={((currentStep - 1) / 2) * 100} />
         {renderFormFields()}
 
