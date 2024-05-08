@@ -53,7 +53,7 @@ function DonorMain() {
         </button>
       </div>
       {isFilterOpen && (
-        <div className="filter-modal">
+        <div className="filter-form-container">
           <button onClick={toggleFilter}>Close</button>
           <div className="filter-options">
             {category.Clothes && (

@@ -182,6 +182,9 @@ button {
 }
 
 .filter-modal {
+  max-height: 50vh;
+  overflow-y: auto;
+  transform: translate(50px, 50px);
   position: fixed;
   top: 20%;
   left: 50%;
@@ -222,4 +225,12 @@ button {
   cursor: pointer;
   font-size: 16px;
   color: #333;
+}
+
+.filter-form-container {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
