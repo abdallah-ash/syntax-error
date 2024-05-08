@@ -18,6 +18,7 @@ root.render(
       <Routes>
         <Route path="/" element={<DonorReg />} />
         <Route path="/donor" element={<DonorMain />} />
+
         {/* Add other routes as needed */}
       </Routes>
     </Router>
