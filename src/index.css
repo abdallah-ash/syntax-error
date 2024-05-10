@@ -140,3 +140,67 @@ button {
 .submit-button:hover {
   background-color: #45a049;
 }
+
+.item-container {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  width: 100%;
+  height: 50px; /* Adjust the height as needed */
+  background-color: #007bff; /* Blue color, you can change it */
+  color: white;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.pop-menu-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+}
+
+.item-donate{
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+
+.item-close {
+  position: absolute;
+  left: 2%;
+  bottom: 2%;
+}  
+
+.item-descrip {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0; 
+}
+
+.item-descrip li {
+  padding: 25px 0; 
+  border-bottom: 1px solid #ccc; 
+}
+
+.item-descrip li:last-child {
+  border-bottom: none; 
+}
+
+.item-descrip-title{
+  font-size: 50px;
+}
