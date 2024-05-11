@@ -25,7 +25,7 @@ root.render(
         <Route path="/donor" element={<DonorMain />} />
         <Route path="/list" element={<ItemsList />} />
         <Route path="/dash" element={<DonorDash />} />
-        <Route path="/addDonationTest" element={<AddDonationTest/>}/>
+        <Route path="/Test" element={<AddDonationTest />} />
         <Route path="/teacher" element={<TeacherDonorDash/>}/>
         <Route path="/doctor" element={<DoctorDonorDash/>}/>
         {/* Add other routes as needed */}
