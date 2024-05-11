@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./index.css";
 import { ItemsList } from "./ItemsList";
 import { donationReq } from "./db";
+import { useNavigate } from "react-router-dom";
 
 // id: "donationReq",
 //   itemType: "",
@@ -32,6 +33,11 @@ import { donationReq } from "./db";
 //blood donations: hospital, governorate, area
 
 function AddDonationTest() {
+  const navigate = useNavigate();
+  const navigateToNewPage = () => {
+    navigate('/donor', { state: { balls: allDonations } });
+};
+
   const [donation, setDonation] = useState(donationReq);
   const [allDonations, setAllDonations] = useState([]);
 
@@ -45,6 +51,7 @@ function AddDonationTest() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setAllDonations([...allDonations, donation]);
+    setDonation(donationReq);
     console.log(allDonations);
   };
 
@@ -298,6 +305,7 @@ function AddDonationTest() {
           </div>
           <button>Ok!</button>
         </form>
+        <button onClick={navigateToNewPage}>Go to New Page</button>
     </>
   );
 }

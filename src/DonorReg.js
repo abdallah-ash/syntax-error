@@ -14,7 +14,6 @@ function RegistrationForm() {
 
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState(initialFormData);
-
   const [file, setFile] = useState(null); // State to hold the file
   const [preview, setPreview] = useState("");
   const Navigate = useNavigate();

@@ -4,10 +4,15 @@ import { useState } from "react";
 import { appliedFilters, searchOptions } from "./db";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
+// import { AddDonationTest } from "./AddDonationTest";
 
 function DonorMain() {
+  const printData = () => {
+    console.log(balls);
+  }
   const location = useLocation();
-  const { formData } = location.state;
+  const { balls } = location.state || [];
+  //const { formData } = location.state;
   const [searchQuery, setSearchQuery] = useState("");
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -42,7 +47,9 @@ function DonorMain() {
   };
 
   return (
+    
     <div className="donor-dashboard">
+      <button onClick={printData}>ok</button>
       <div className="search-bar">
         <input type="text" placeholder="Search..." value={searchQuery} />
         <button onClick={toggleCategory}>category</button>
@@ -52,6 +59,7 @@ function DonorMain() {
           <FontAwesomeIcon icon={faFilter} />
         </button>
       </div>
+      
       {isFilterOpen && (
         <div className="filter-form-container">
           <button onClick={toggleFilter}>Close</button>
