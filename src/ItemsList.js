@@ -1,11 +1,20 @@
 import "./index.css";
 import React, { useEffect, useState } from "react";
+import { donationReq } from "./db";
 
-function ItemsList({donationReq}) {
+function ItemsList() {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const toggleDonation = () => {
         setMenuOpen(!isMenuOpen);
       };
+
+    const [quantities, setQuantities] = useState([1]); // Initial quantities for each item
+    const handleQuantityChange = (index, value) => {
+        const newQuantities = [...quantities];
+        newQuantities[index] = value;
+        setQuantities(newQuantities);
+    };
+
     return(
         <>
         <div className="item-container">
@@ -31,6 +40,17 @@ function ItemsList({donationReq}) {
                     {donationReq.hospital !== '' && <li>Hospital: {donationReq.hospital}</li>}
                     {donationReq.governorate !== '' && <li>Governorate: {donationReq.governorate}</li>}
                     {donationReq.area !== '' && <li>Area: {donationReq.area}</li>}
+                    {quantities.map((quantity, index) => (
+                    <li key={index}>
+                    Quantity:
+                    <input
+                    type="number"
+                    min="0"
+                    value={quantity}
+                    onChange={(e) => handleQuantityChange(index, parseInt(e.target.value))}
+                    />
+                    </li>
+                    ))}
                 </ul>
                <button className="item-close" onClick={toggleDonation}>Close</button>
                <button className="item-donate">donate</button>

@@ -7,6 +7,9 @@ import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
+import TeacherDonorDash from "./TeacherDonorDash.js";
+import DoctorDonorDash from "./DoctorDonorDash.js";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -23,6 +26,8 @@ root.render(
         <Route path="/list" element={<ItemsList />} />
         <Route path="/dash" element={<DonorDash />} />
         <Route path="/addDonationTest" element={<AddDonationTest/>}/>
+        <Route path="/teacher" element={<TeacherDonorDash/>}/>
+        <Route path="/doctor" element={<DoctorDonorDash/>}/>
         {/* Add other routes as needed */}
       </Routes>
     </Router>
