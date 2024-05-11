@@ -7,7 +7,7 @@ import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 function DonorMain() {
   const location = useLocation();
-  const { formData } = location.state;
+  //const { formData } = location.state;
   const [searchQuery, setSearchQuery] = useState("");
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);

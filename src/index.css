@@ -362,7 +362,7 @@ button {
   margin: auto;
 }
 
-.item-donate{
+.item-donate {
   position: absolute;
   bottom: 2%;
   right: 2%;
@@ -372,23 +372,60 @@ button {
   position: absolute;
   left: 2%;
   bottom: 2%;
-}  
+}
 
 .item-descrip {
   margin-top: 10px;
   list-style-type: none;
-  padding: 0; 
+  padding: 0;
 }
 
 .item-descrip li {
-  padding: 25px 0; 
-  border-bottom: 1px solid #ccc; 
+  padding: 25px 0;
+  border-bottom: 1px solid #ccc;
 }
 
 .item-descrip li:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
-.item-descrip-title{
+.item-descrip-title {
   font-size: 50px;
+}
+.dashboard {
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-header {
+  background-color: #4caf50; /* A distinct color for the header */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button.active {
+  border-color: #fff; /* White underline for the active tab */
+}
+
+.notification-button {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.dashboard-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
 }

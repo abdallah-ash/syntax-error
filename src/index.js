@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
+import DonorDash from "./DonorDash.js";
 import {
   BrowserRouter as Router,
   Route,
@@ -20,6 +21,7 @@ root.render(
         <Route path="/" element={<DonorReg />} />
         <Route path="/donor" element={<DonorMain />} />
         <Route path="/list" element={<ItemsList />} />
+        <Route path="/dash" element={<DonorDash />} />
 
         {/* Add other routes as needed */}
       </Routes>
