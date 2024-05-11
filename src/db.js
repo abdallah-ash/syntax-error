@@ -20,7 +20,6 @@ const searchOptions = {
 };
 
 const appliedFilters = {
-  itemType: "",
   age: "",
   gender: "",
   season: "",
@@ -34,7 +33,6 @@ const appliedFilters = {
   medEquipment: "",
   medication: "",
   medUse: "",
-  hospital: "",
   hospital: "",
   governorate: "",
   area: "",
@@ -49,7 +47,12 @@ const appliedFilters = {
 
 let donationReq = {
   id: "donationReq",
-  itemType: "",
+  Clothes: false,
+  Toys: false,
+  Food: false,
+  MedicalSupplies: false,
+  SchoolSupplies: false,
+  BloodDonations: false,
   age: "",
   gender: "",
   season: "",
@@ -64,10 +67,10 @@ let donationReq = {
   medication: "",
   medUse: "",
   hospital: "",
-  hospital: "",
+
   governorate: "",
   area: "",
-  quantity: ""
+  quantity: "",
 };
 
 export default initialFormData;
