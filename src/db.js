@@ -48,10 +48,11 @@ const appliedFilters = {
 //blood donations: hospital, governorate, area
 
 let donationReq = {
-  itemType: "balls",
-  age: "5",
-  gender: "male",
-  season: "summer",
+  id: "donationReq",
+  itemType: "",
+  age: "",
+  gender: "",
+  season: "",
   schoolSupplies: "",
   category: "",
   fruitsAndVegies: "",
@@ -66,11 +67,8 @@ let donationReq = {
   hospital: "",
   governorate: "",
   area: "",
+  quantity: ""
 };
 
 export default initialFormData;
 export { donationReq, initialFormData, searchOptions, appliedFilters };
-
-//abdalla testing
-
-//abdalla test vscode push

@@ -1,8 +1,7 @@
 import "./index.css";
-import { donationReq } from "./db.js";
 import React, { useEffect, useState } from "react";
 
-function ItemsList() {
+function ItemsList({donationReq}) {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const toggleDonation = () => {
         setMenuOpen(!isMenuOpen);

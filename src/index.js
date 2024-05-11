@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import AddDonationTest from "./AddDonationTest";
 import reportWebVitals from "./reportWebVitals";
 import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
@@ -20,7 +20,7 @@ root.render(
         <Route path="/" element={<DonorReg />} />
         <Route path="/donor" element={<DonorMain />} />
         <Route path="/list" element={<ItemsList />} />
-
+        <Route path="/addDonationTest" element={<AddDonationTest/>}/>
         {/* Add other routes as needed */}
       </Routes>
     </Router>
