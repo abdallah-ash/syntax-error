@@ -18,18 +18,27 @@ function DonorOrgList() {
       medSpecialty: " type 1",
       area: "cairo",
       governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
     },
     {
       orgName: "org2",
       medSpecialty: " type 2",
       area: "giza",
       governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
     },
     {
       orgName: "org3",
       medSpecialty: " type 3",
       area: "alex",
       governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
     },
   ];
   const [searchQuery, setSearchQuery] = useState("");

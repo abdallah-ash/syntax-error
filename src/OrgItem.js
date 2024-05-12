@@ -24,11 +24,13 @@ function OrgItem({ OrgReq }) {
             <li>Organization Type: {OrgReq.medSpecialty} </li>
             <li>Area: {OrgReq.area}</li>
             <li>Governorate: {OrgReq.governorate}</li>
+            <li>Phone: {OrgReq.contactDetails}</li>
+            <li>Adress: {OrgReq.adress}</li>
+            <li>location: {OrgReq.location}</li>
           </ul>
           <button className="medical-case-close" onClick={toggleDonation}>
             Close
           </button>
-          <button className="medical-case-accept">accept</button>
         </div>
       )}
     </>

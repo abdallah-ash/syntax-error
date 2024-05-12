@@ -1,42 +1,73 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import OrgItem from "./OrgItem";
+import DonorItem from "./DonorItem";
 const OrganizationDonorList = () => {
-  const [organizations, setOrganizations] = useState([
-    { id: 1, name: 'Organization A', type: 'Non-profit' },
-    { id: 2, name: 'Organization B', type: 'Charity' },
-    { id: 3, name: 'Organization C', type: 'Foundation' }
-  ]);
-
-  const [donors, setDonors] = useState([
-    { id: 1, name: 'Donor X', type: 'Individual' },
-    { id: 2, name: 'Donor Y', type: 'Corporate' },
-    { id: 3, name: 'Donor Z', type: 'Foundation' }
-  ]);
+  const organizationss = [
+    {
+      orgName: "org1",
+      medSpecialty: " type 1",
+      area: "cairo",
+      governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
+    },
+    {
+      orgName: "org2",
+      medSpecialty: " type 2",
+      area: "giza",
+      governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
+    },
+    {
+      orgName: "org3",
+      medSpecialty: " type 3",
+      area: "alex",
+      governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
+    },
+  ];
+  const Donorss = [
+    {
+      donorName: "donor1",
+      medSpecialty: " type 1",
+      area: "cairo",
+      governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
+    },
+    {
+      donorName: "donor2",
+      medSpecialty: " type 2",
+      area: "giza",
+      governorate: "egypt",
+      contactDetails: "123456789",
+      adress: "123 street",
+      location: "coordinates",
+    },
+  ];
 
   return (
     <div>
       <h2>View Organization and Donor Lists</h2>
       <div>
         <h3>Organizations</h3>
-        <ul>
-          {organizations.map(organization => (
-            <li key={organization.id}>
-              <div>Name: {organization.name}</div>
-              <div>Type: {organization.type}</div>
-            </li>
-          ))}
-        </ul>
+
+        {organizationss.map((organization) => (
+          <OrgItem key={organization.id} OrgReq={organization} />
+        ))}
       </div>
       <div>
         <h3>Donors</h3>
-        <ul>
-          {donors.map(donor => (
-            <li key={donor.id}>
-              <div>Name: {donor.name}</div>
-              <div>Type: {donor.type}</div>
-            </li>
-          ))}
-        </ul>
+
+        {Donorss.map((donor) => (
+          <DonorItem key={donor.id} doctorDonationReq={donor} />
+        ))}
       </div>
     </div>
   );
