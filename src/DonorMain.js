@@ -57,32 +57,52 @@ function DonorMain() {
     console.log("Filtered Requests:", filtered);
     setFilteredDonationRequests(filtered);
   };
+  const handleSearchChange = (e) => {
+    const newSearchQuery = e.target.value;
+    setSearchQuery(newSearchQuery);
+    const categories = Object.keys(category);
+
+    // Update the category based on whether the search query is empty
+    if (
+      newSearchQuery === "Clothes" ||
+      newSearchQuery === "Toys" ||
+      newSearchQuery === "Food" ||
+      newSearchQuery === "MedicalSupplies" ||
+      newSearchQuery === "SchoolSupplies" ||
+      newSearchQuery === "BloodDonations"
+    ) {
+      setCategory((prev) => ({ ...prev, [newSearchQuery]: true }));
+    } else {
+      setCategory((prev) => ({ ...prev, ["Clothes"]: false }));
+      setCategory((prev) => ({ ...prev, ["Toys"]: false }));
+      setCategory((prev) => ({ ...prev, ["Food"]: false }));
+      setCategory((prev) => ({ ...prev, ["MedicalSupplies"]: false }));
+      setCategory((prev) => ({ ...prev, ["SchoolSupplies"]: false }));
+      setCategory((prev) => ({ ...prev, ["BloodDonations"]: false }));
+    }
+  };
 
   return (
     <div className="donor-dashboard">
       <div className="search-bar">
-        <img src={process.env.PUBLIC_URL + '/logo.png'} alt=" logo duh"/>
+        <img src={process.env.PUBLIC_URL + "/logo.png"} alt=" logo duh" />
         <input
           type="text"
           placeholder="Search..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearchChange}
         />
         <button onClick={() => setIsCategoryOpen(!isCategoryOpen)}>
           Category
         </button>
-        <button
-          onClick={() => setIsFilterOpen(!isFilterOpen)}
-        >
+        <button onClick={() => setIsFilterOpen(!isFilterOpen)}>
           <FontAwesomeIcon icon={faFilter} />
         </button>
       </div>
 
       {isFilterOpen && (
         <>
-          <button onClick={applyFilters}>Apply Filters</button>
           <div className="filter-form-container">
-            
             <div className="filter-options">
               {category.Clothes && (
                 <div>
@@ -206,7 +226,7 @@ function DonorMain() {
                 <div>
                   <h3>Medical Supplies</h3>
                   <label>
-                  Medical Devices:
+                    Medical Devices:
                     <input
                       type="text"
                       name="medDevice"
@@ -215,7 +235,7 @@ function DonorMain() {
                     />
                   </label>
                   <label>
-                  Medical Equipment:
+                    Medical Equipment:
                     <input
                       type="text"
                       name="medEquipment"
@@ -224,16 +244,16 @@ function DonorMain() {
                     />
                   </label>
                   <label>
-                  Medication:
+                    Medication:
                     <input
                       type="text"
                       name="medUse"
                       value={filters.medUse}
                       onChange={handleFilterChange}
-                    /> 
+                    />
                   </label>
                   <label>
-                  Medical Use:
+                    Medical Use:
                     <input
                       type="text"
                       name="medUse"
@@ -261,22 +281,22 @@ function DonorMain() {
                 <div>
                   <h3>Blood Donations</h3>
                   <div>
-                  <input
-                    type="text"
-                    name="bloodDonationsHospital"
-                    value={filters.bloodDonationsHospital}
-                    placeholder="Hospital"
-                    onChange={handleFilterChange}
-                  />
+                    <input
+                      type="text"
+                      name="bloodDonationsHospital"
+                      value={filters.bloodDonationsHospital}
+                      placeholder="Hospital"
+                      onChange={handleFilterChange}
+                    />
                   </div>
                   <div>
-                  <input
-                    type="text"
-                    name="bloodDonationsGovernorate"
-                    value={filters.bloodDonationsGovernorate}
-                    placeholder="Governorate"
-                    onChange={handleFilterChange}
-                  />
+                    <input
+                      type="text"
+                      name="bloodDonationsGovernorate"
+                      value={filters.bloodDonationsGovernorate}
+                      placeholder="Governorate"
+                      onChange={handleFilterChange}
+                    />
                   </div>
                   <input
                     type="text"
@@ -289,7 +309,7 @@ function DonorMain() {
               )}
             </div>
             <button onClick={() => setIsFilterOpen(false)}>Close</button>
-            <button>Apply category</button>
+            <button onClick={applyFilters}>Apply Filters</button>
           </div>
         </>
       )}
@@ -357,7 +377,7 @@ function DonorMain() {
               />
             </label>
           </div>
-          <button>Apply category</button>
+          <button onClick={applyFilters}>Apply Filters</button>
         </div>
       )}
     </div>

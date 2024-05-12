@@ -7,7 +7,7 @@ import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
-
+import DonorOrgList from "./DonorOrgList.js";
 import DoctorItem from "./DoctorItem.js";
 
 import {
@@ -16,6 +16,7 @@ import {
   Switch,
   Routes,
 } from "react-router-dom";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
@@ -28,6 +29,7 @@ root.render(
         <Route path="/Test" element={<AddDonationTest />} />
 
         <Route path="/doctor" element={<DoctorItem />} />
+        <Route path="/org" element={<DonorOrgList />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
