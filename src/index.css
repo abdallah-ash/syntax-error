@@ -19,9 +19,9 @@ code {
 .registration-background {
   background: linear-gradient(
     to right,
-    #ff7e5f,
-    #feb47b
-  ); /* Fancy gradient background */
+    #4CB7C1,
+    #E5417D
+  ); 
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -41,7 +41,7 @@ code {
 
 .registration-form {
   padding: 20px;
-  background: white;
+  /* background: white; */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -57,7 +57,7 @@ input {
 }
 
 button {
-  background: #ff7e5f; /* Match the darker gradient color */
+  background: #4CB7C1; 
   color: white;
   border: none;
   padding: 10px;
@@ -67,7 +67,7 @@ button {
 }
 
 button:hover {
-  background: #feb47b; /* Match the lighter gradient color */
+  background: #D4CBE5;
 }
 
 .form-container {
@@ -145,6 +145,14 @@ button {
   padding: 20px;
 }
 
+.donor-dashboard button{
+  background-color: #4CB7C1;
+}
+
+.donor-dashboard button:hover{
+  background-color: #D4CBE5;
+}
+
 .search-bar {
   display: flex;
   justify-content: space-between;
@@ -161,11 +169,20 @@ button {
 
 .search-bar button {
   padding: 8px 16px;
-  background-color: #4caf50;
+  background-color: #e5417d;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.search-bar button:hover{
+  background-color: #58355E;
+}
+
+.search-bar img{
+  width: 80px;
+  height: 80px;
 }
 
 .filter-modal {
@@ -219,13 +236,17 @@ button {
   margin-right: 10px;
 }
 
-.filter-button {
+/* .filter-button {
   background: grey;
   border: none;
   cursor: pointer;
   font-size: 16px;
   color: #333;
-}
+} */
+
+/* .filter-button button:hover{
+  background-color: #58355E;
+} */
 
 .filter-form-container {
   max-height: 60vh;
@@ -252,17 +273,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.registration-background {
-  background: linear-gradient(
-    to right,
-    #ff7e5f,
-    #feb47b
-  ); /* Fancy gradient background */
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .form-container {
   display: flex;
   justify-content: center;
@@ -292,19 +303,19 @@ input {
   border-radius: 4px;
 }
 
-button {
-  background: #ff7e5f; /* Match the darker gradient color */
+/* button {
+  background: #ff7e5f; 
   color: white;
   border: none;
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-}
+} */
 
-button:hover {
-  background: #feb47b; /* Match the lighter gradient color */
-}
+/* button:hover {
+  background: #feb47b; 
+} */
 
 .form-container {
   margin: 20px;
@@ -382,10 +393,14 @@ button {
   justify-content: center;
 }
 
+.item-container button:hover {
+  background-color: #D4CBE5;
+}
+
 .item {
   width: 100%;
-  height: 50px; /* Adjust the height as needed */
-  background-color: #007bff; /* Blue color, you can change it */
+  height: 50px; 
+  background-color: #4CB7C1; 
   color: white;
   font-size: 16px;
   border: none;
@@ -408,6 +423,14 @@ button {
   width: 90%;
   height: 90%;
   margin: auto;
+}
+
+.pop-menu-items button{
+  background-color: #4CB7C1;
+}
+
+.pop-menu-items button:hover{
+  background-color: #D4CBE5;
 }
 
 .item-donate {
@@ -440,16 +463,21 @@ button {
 .item-descrip-title {
   font-size: 50px;
 }
+
 .dashboard {
   font-family: Arial, sans-serif;
 }
 
 .dashboard-header {
-  background-color: #4caf50; /* A distinct color for the header */
+  background-color: #4cb7c1; /* A distinct color for the header */
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.dashboard button:hover{
+  background-color: #D4CBE5;
 }
 
 .tab-button {
@@ -506,3 +534,14 @@ button {
   left: 2%;
   bottom: 2%;
 }
+
+select {
+  appearance: none; 
+  padding: 8px 12px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #fff;
+  cursor: pointer; 
+}
+
