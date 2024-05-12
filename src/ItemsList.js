@@ -1,6 +1,7 @@
 import "./index.css";
 import React, { useEffect, useState } from "react";
 import { donationReq } from "./db";
+import TransportationOptions from "./deliveryperson";
 
 function ItemsList({ donationReq }) {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -8,12 +9,31 @@ function ItemsList({ donationReq }) {
         setMenuOpen(!isMenuOpen);
      };
 
+    const [isDeliveryMenuOpen, setDeliveryMenuOpen] = useState(false);
+
     const [quantities, setQuantities] = useState([1]); // Initial quantities for each item
     const handleQuantityChange = (index, value) => {
         const newQuantities = [...quantities];
         newQuantities[index] = value;
         setQuantities(newQuantities);
     };
+
+    const handleEvent = () => {
+        setMenuOpen(!isMenuOpen);
+        setDeliveryMenuOpen(!isDeliveryMenuOpen);
+    }
+
+    const [isConfirmMenuOpen, setConfirmMenuOpen] = useState(false);
+
+  const handleConfirm = () =>{
+    setDeliveryMenuOpen((prev) => !prev);
+    setConfirmMenuOpen(!isConfirmMenuOpen);
+  }
+
+  const toggleConfirm = () => {
+    setConfirmMenuOpen(!isConfirmMenuOpen);
+  }
+
 
   return (
     <>
@@ -98,9 +118,19 @@ function ItemsList({ donationReq }) {
           <button className="item-close" onClick={toggleDonation}>
             Close
           </button>
-          <button className="item-donate">donate</button>
+          <button className="item-donate" onClick={handleEvent}>donate</button>
         </div>
       )}
+       {isDeliveryMenuOpen && <div className="pop-menu-items"><TransportationOptions/>
+       <button className="item-donate" onClick={handleConfirm}>Confirm</button>
+       </div>}
+        {isConfirmMenuOpen && (
+              <div className="confirm-menu-items">
+                <h1>Donation Confirmed!</h1>
+                <button onClick={toggleConfirm}>Confirm</button>
+              </div>
+          )}
+       
     </>
   );
 }
