@@ -1,11 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import AddDonationTest from "./AddDonationTest";
 import reportWebVitals from "./reportWebVitals";
 import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
+import DonorDash from "./DonorDash.js";
+
+import DoctorItem from "./DoctorItem.js";
+
 import TransportationOptions from "./deliveryperson";
 import Delivery from "./delivery";
 import {
@@ -22,9 +26,12 @@ root.render(
         <Route path="/" element={<DonorReg />} />
         <Route path="/donor" element={<DonorMain />} />
         <Route path="/list" element={<ItemsList />} />
+        <Route path="/dash" element={<DonorDash />} />
+        <Route path="/Test" element={<AddDonationTest />} />
         <Route path="/piss" element={<TransportationOptions />} />
         <Route path="/piss2" element={<Delivery />} />
 
+        <Route path="/doctor" element={<DoctorItem />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>

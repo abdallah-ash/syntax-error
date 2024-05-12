@@ -20,7 +20,6 @@ const searchOptions = {
 };
 
 const appliedFilters = {
-  itemType: "",
   age: "",
   gender: "",
   season: "",
@@ -35,7 +34,6 @@ const appliedFilters = {
   medication: "",
   medUse: "",
   hospital: "",
-  hospital: "",
   governorate: "",
   area: "",
 };
@@ -48,13 +46,19 @@ const appliedFilters = {
 //blood donations: hospital, governorate, area
 
 let donationReq = {
-  itemType: "balls",
-  age: "5",
-  gender: "male",
-  season: "summer",
+  id: "donationReq",
+  Clothes: false,
+  Toys: false,
+  Food: false,
+  MedicalSupplies: false,
+  SchoolSupplies: false,
+  BloodDonations: false,
+  age: "",
+  gender: "",
+  season: "",
   schoolSupplies: "",
   category: "",
-  fruitsAndVegies: "",
+  fruitsAndVegies: " ",
   cannedFood: "",
   freshMeals: "",
   bakedGoods: "",
@@ -63,9 +67,44 @@ let donationReq = {
   medication: "",
   medUse: "",
   hospital: "",
-  hospital: "",
+
   governorate: "",
   area: "",
+  quantity: "",
+};
+
+let teacherDonationReq = {
+  subject: "", //filterable
+  area: "", //filterable
+  governorate: "", //filterable
+  noOfStudents: "",
+  address: "",
+};
+
+let doctorDonationReq = {
+  patientName: "",
+  patientAge: "",
+  patientGender: "",
+  patientWegiht: "",
+  location: "", //google map marker
+  caseDescription: "",
+  medSpecialty: "", // filterable
+  orgName: "", // filterable
+  area: "", // filterable
+  governorate: "", // filterable
+};
+
+let doctorFilters = {
+  medSpecialty: "",
+  orgName: "",
+  area: "",
+  governorate: "",
+};
+
+let teacherFilters = {
+  subject: "",
+  area: "",
+  governorate: "",
 };
 
 const deliveryInfo ={
@@ -74,8 +113,13 @@ const deliveryInfo ={
 }
 
 export default initialFormData;
-export { donationReq, initialFormData, searchOptions, appliedFilters };
-
-//abdalla testing
-
-//abdalla test vscode push
+export {
+  donationReq,
+  initialFormData,
+  searchOptions,
+  appliedFilters,
+  teacherDonationReq,
+  doctorDonationReq,
+  doctorFilters,
+  teacherFilters,
+};

@@ -14,14 +14,13 @@ function RegistrationForm() {
 
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState(initialFormData);
-
   const [file, setFile] = useState(null); // State to hold the file
   const [preview, setPreview] = useState("");
   const Navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    Navigate("/donor", { state: { formData } });
+    Navigate("/dash", { state: { type: formData.type } });
   };
 
   useEffect(() => {
