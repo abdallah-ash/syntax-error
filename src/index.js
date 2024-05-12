@@ -38,7 +38,6 @@ root.render(
         <Route path="/dash" element={<DonorDash />} />
         <Route path="/Test" element={<AddDonationTest />} />
         <Route path="/adminlogin" element={<Login />} />
-        <Route exact path="/Login2" component={Login2} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/organization-and-donor-lists" component={OrganizationDonorList} />
       <Route path="/submission-review" component={SubmissionReview} />

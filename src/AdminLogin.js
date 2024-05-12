@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -7,11 +8,10 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
- 
 
     //temp
     if (username === 'admin' && password === 'password') {
-      onLogin(username); 
+      onLogin(username);
     } else {
       setError('Invalid username or password');
     }
@@ -43,7 +43,25 @@ const Login = ({ onLogin }) => {
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
+  ); 
+};
+
+const Login2 = () => {
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  const handleLogin = (username) => {
+    setLoggedInUser(username);
+  };
+
+  return (
+    <div>
+      {loggedInUser ? (
+        <Redirect to="/dashboard" />
+      ) : (
+        <Login onLogin={handleLogin} />
+      )}
+    </div>
   );
 };
 
-export default Login;
+export default Login2;
