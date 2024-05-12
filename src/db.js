@@ -107,6 +107,11 @@ let teacherFilters = {
   governorate: "",
 };
 
+const deliveryInfo ={
+ trans: "",
+ time: "",
+}
+
 export default initialFormData;
 export {
   donationReq,

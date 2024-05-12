@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
+import { Navigate, Redirect } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
- 
 
-    //temp
-    if (username === 'admin' && password === 'password') {
-      onLogin(username); // Notify parent component about successful login
+    // Simulated user credentials
+    const dummyUsername = 'admin';
+    const dummyPassword = 'password';
+
+    if (username === dummyUsername && password === dummyPassword) {
+      setRedirectToDashboard(true); //dashboard
     } else {
       setError('Invalid username or password');
     }
   };
+
+  if (redirectToDashboard) {
+    return <Navigate to="/dashboard" />;
+  }
 
   return (
     <div>
@@ -47,3 +55,7 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
+
+
+
+//wwww
