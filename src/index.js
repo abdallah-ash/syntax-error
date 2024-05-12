@@ -8,7 +8,7 @@ import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
 import DoctorItem from "./DoctorItem.js";
-import Login from "./Admintest.js"; 
+import Login from "./AdminLogin.js"; 
 import Login2 from './Login2';
 import Dashboard from './Dashboard';
 import OrganizationDonorList from './OrganizationDonorList';
@@ -38,7 +38,7 @@ root.render(
         <Route path="/dash" element={<DonorDash />} />
         <Route path="/Test" element={<AddDonationTest />} />
         <Route path="/adminlogin" element={<Login />} />
-        <Route exact path="/" component={Login2} />
+        <Route exact path="/Login2" component={Login2} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/organization-and-donor-lists" component={OrganizationDonorList} />
       <Route path="/submission-review" component={SubmissionReview} />

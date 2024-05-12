@@ -11,7 +11,7 @@ const Login = ({ onLogin }) => {
 
     //temp
     if (username === 'admin' && password === 'password') {
-      onLogin(username); // Notify parent component about successful login
+      onLogin(username); 
     } else {
       setError('Invalid username or password');
     }
