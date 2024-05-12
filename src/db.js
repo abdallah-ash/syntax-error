@@ -68,6 +68,11 @@ let donationReq = {
   area: "",
 };
 
+const deliveryInfo ={
+ trans: "",
+ time: "",
+}
+
 export default initialFormData;
 export { donationReq, initialFormData, searchOptions, appliedFilters };
 
