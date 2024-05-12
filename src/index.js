@@ -7,16 +7,18 @@ import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
+import DonorOrgList from "./DonorOrgList.js";
 import DoctorItem from "./DoctorItem.js";
-import Login from "./AdminLogin.js"; 
-import Dashboards from './Dashboard';
-import OrganizationDonorList from './OrganizationDonorList';
-import SubmissionReview from './SubmissionReview';
-import ManageRequests from './ManageRequests';
-import PasswordManagement from './PasswordManagement';
-import ViewRegisteredOrganizations from './ViewRegisteredOrganizations';
-import ViewOrganizationDetails from './ViewOrganizationDetails';
-import DeleteAccount from './DeleteAccount';
+import Login from "./AdminLogin.js";
+import Dashboard from "./Dashboard";
+import OrganizationDonorList from "./OrganizationDonorList";
+import SubmissionReview from "./SubmissionReview";
+import ManageRequests from "./ManageRequests";
+import PasswordManagement from "./PasswordManagement";
+import ViewRegisteredOrganizations from "./ViewRegisteredOrganizations";
+import ViewOrganizationDetails from "./ViewOrganizationDetails";
+import DeleteAccount from "./DeleteAccount";
+import AdminDash from "./AdminDash.js";
 import OrgDashboard from "./OrgDash.js";
 import TransportationOptions from "./deliveryperson";
 import Delivery from "./delivery";
@@ -26,6 +28,7 @@ import {
   Switch,
   Routes,
 } from "react-router-dom";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
@@ -37,18 +40,38 @@ root.render(
         <Route path="/dash" element={<DonorDash />} />
         <Route path="/Test" element={<AddDonationTest />} />
         <Route path="/adminlogin" element={<Login />} />
-      <Route path="/dashboard" component={<Dashboards />} />
-      <Route path="/organization-and-donor-lists" component={<OrganizationDonorList />} />
-      <Route path="/submission-review" component={<SubmissionReview />} />
-      <Route path="/manage-requests" component={<ManageRequests />} />
-      <Route path="/password-management" component={<PasswordManagement />} />
-      <Route path="/registered-organizations" component={<ViewRegisteredOrganizations />} />
-      <Route path="/view-organization-details" component={<ViewOrganizationDetails />} />
-      <Route path="/delete-account" component={<DeleteAccount />} />
-        <Route path="/piss" element={<TransportationOptions />} />
-        <Route path="/piss2" element={<Delivery />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/orgdonorlist" element={<OrganizationDonorList />} />
+        <Route path="/submissionreview" element={<SubmissionReview />} />
+        <Route path="/managerequests" element={<ManageRequests />} />
+        <Route path="/passwordmanagement" element={<PasswordManagement />} />
+        <Route
+          path="/viewregisteredorgs"
+          element={<ViewRegisteredOrganizations />}
+        />
+        <Route path="/vieworgdetails" element={<ViewOrganizationDetails />} />
+        <Route path="/deleteaccount" element={<DeleteAccount />} />
+        <Route
+          path="/organization-and-donor-lists"
+          component={<OrganizationDonorList />}
+        />
+        <Route path="/submission-review" element={<SubmissionReview />} />
+        <Route path="/manage-requests" element={<ManageRequests />} />
+        <Route path="/password-management" element={<PasswordManagement />} />
+        <Route
+          path="/registered-organizations"
+          element={<ViewRegisteredOrganizations />}
+        />
+        <Route
+          path="/view-organization-details"
+          element={<ViewOrganizationDetails />}
+        />
+        <Route path="/delete-account" element={<DeleteAccount />} />
+        <Route path="/del" element={<TransportationOptions />} />
+        <Route path="/delivery" element={<Delivery />} />
         <Route path="/org" element={<OrgDashboard/>}/>
         <Route path="/doctor" element={<DoctorItem />} />
+        <Route path="/org" element={<DonorOrgList />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
