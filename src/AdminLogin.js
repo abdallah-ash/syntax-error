@@ -15,8 +15,7 @@ const Login = ({ onLogin }) => {
     const dummyPassword = 'password';
 
     if (username === dummyUsername && password === dummyPassword) {
-      onLogin(username); // Notify parent component about successful login
-      setRedirectToDashboard(true); // Redirect to dashboard
+      setRedirectToDashboard(true); //dashboard
     } else {
       setError('Invalid username or password');
     }
@@ -59,4 +58,4 @@ export default Login;
 
 
 
-//ww 
+//wwww
