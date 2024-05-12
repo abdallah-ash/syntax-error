@@ -9,6 +9,16 @@ import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
 
 import DoctorItem from "./DoctorItem.js";
+import Login from "./Admintest.js"; 
+import Login2 from './Login2';
+import Dashboard from './Dashboard';
+import OrganizationDonorList from './OrganizationDonorList';
+import SubmissionReview from './SubmissionReview';
+import ManageRequests from './ManageRequests';
+import PasswordManagement from './PasswordManagement';
+import ViewRegisteredOrganizations from './ViewRegisteredOrganizations';
+import ViewOrganizationDetails from './ViewOrganizationDetails';
+import DeleteAccount from './DeleteAccount';
 
 import {
   BrowserRouter as Router,
@@ -26,6 +36,16 @@ root.render(
         <Route path="/list" element={<ItemsList />} />
         <Route path="/dash" element={<DonorDash />} />
         <Route path="/Test" element={<AddDonationTest />} />
+        <Route path="/adminlogin" element={<Login />} />
+        <Route exact path="/" component={Login2} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/organization-and-donor-lists" component={OrganizationDonorList} />
+      <Route path="/submission-review" component={SubmissionReview} />
+      <Route path="/manage-requests" component={ManageRequests} />
+      <Route path="/password-management" component={PasswordManagement} />
+      <Route path="/registered-organizations" component={ViewRegisteredOrganizations} />
+      <Route path="/view-organization-details" component={ViewOrganizationDetails} />
+      <Route path="/delete-account" component={DeleteAccount} />
 
         <Route path="/doctor" element={<DoctorItem />} />
         {/* Add other routes as needed */}
