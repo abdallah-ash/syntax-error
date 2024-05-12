@@ -45,5 +45,24 @@ const Login = ({ onLogin }) => {
     </div>
   ); 
 };
+const Login2 = () => {
+    const [loggedInUser, setLoggedInUser] = useState(null);
+  
+    const handleLogin = (username) => {
+      setLoggedInUser(username);
+    };
+  
+    return (
+      <div>
+        {loggedInUser ? (
+          <Redirect to="/dashboard" />
+        ) : (
+          <Login onLogin={handleLogin} />
+        )}
+      </div>
+    );
+  };
+  
+  export default Login2; 
 
 //wwwwwwwwwww 

@@ -9,7 +9,6 @@ import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
 import DoctorItem from "./DoctorItem.js";
 import Login from "./AdminLogin.js"; 
-import Login2 from './Login2';
 import Dashboard from './Dashboard';
 import OrganizationDonorList from './OrganizationDonorList';
 import SubmissionReview from './SubmissionReview';
