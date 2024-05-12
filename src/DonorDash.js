@@ -4,6 +4,7 @@ import "./index.css";
 import DocMain from "./DocMain";
 import TeachMain from "./TeachMain";
 import DonorMain from "./DonorMain";
+import Delivery from "./delivery";
 import { useLocation } from "react-router-dom";
 import DonorOrgList from "./DonorOrgList";
 function DonorDashboard() {
@@ -22,6 +23,12 @@ function DonorDashboard() {
           onClick={() => handleTabClick("home")}
         >
           Home
+        </button>
+        <button
+          className={`tab-button ${activeTab === "delivery" ? "active" : ""}`}
+          onClick={() => handleTabClick("delivery")}
+        >
+          Delivery
         </button>
         <button
           className={`tab-button ${activeTab === "org" ? "active" : ""}`}
@@ -54,6 +61,11 @@ function DonorDashboard() {
         {activeTab === "home" && (
           <div>
             <DonorMain />
+          </div>
+        )}
+        {activeTab === "delivery" && (
+          <div>
+            <Delivery />
           </div>
         )}
         {activeTab === "org" && (
