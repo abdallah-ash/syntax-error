@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 // Assuming you have some CSS file to style your dashboard
 import "./index.css";
+import DocMain from "./DocMain";
+import TeachMain from "./TeachMain";
 import DonorMain from "./DonorMain";
+import { useLocation } from "react-router-dom";
 function DonorDashboard() {
   const [activeTab, setActiveTab] = useState("home");
-
+  const location = useLocation();
+  const { type } = location.state || {};
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -18,18 +22,23 @@ function DonorDashboard() {
         >
           Home
         </button>
-        <button
-          className={`tab-button ${activeTab === "profile" ? "active" : ""}`}
-          onClick={() => handleTabClick("profile")}
-        >
-          Profile
-        </button>
-        <button
-          className={`tab-button ${activeTab === "settings" ? "active" : ""}`}
-          onClick={() => handleTabClick("settings")}
-        >
-          Settings
-        </button>
+        {type === "doctor" && (
+          <button
+            className={`tab-button ${activeTab === "doctor" ? "active" : ""}`}
+            onClick={() => handleTabClick("doctor")}
+          >
+            Doctor
+          </button>
+        )}
+        {type === "teacher" && (
+          <button
+            className={`tab-button ${activeTab === "teacher" ? "active" : ""}`}
+            onClick={() => handleTabClick("teacher")}
+          >
+            Teacher
+          </button>
+        )}
+
         <div className="notification-button">
           <span>🔔</span>
         </div>
@@ -40,8 +49,16 @@ function DonorDashboard() {
             <DonorMain />
           </div>
         )}
-        {activeTab === "profile" && <div>Profile Content</div>}
-        {activeTab === "settings" && <div>Settings Content</div>}
+        {activeTab === "doctor" && (
+          <div>
+            <DocMain />
+          </div>
+        )}
+        {activeTab === "teacher" && (
+          <div>
+            <TeachMain />
+          </div>
+        )}
       </div>
     </div>
   );

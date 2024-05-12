@@ -58,7 +58,7 @@ let donationReq = {
   season: "",
   schoolSupplies: "",
   category: "",
-  fruitsAndVegies: "",
+  fruitsAndVegies: " ",
   cannedFood: "",
   freshMeals: "",
   bakedGoods: "",
@@ -73,5 +73,48 @@ let donationReq = {
   quantity: "",
 };
 
+let teacherDonationReq = {
+  subject: "balls", //filterable
+  area: "bigger balls", //filterable
+  governorate: "biggest balls", //filterable
+  noOfStudents: "",
+  address: "",
+};
+
+let doctorDonationReq = {
+  patientName: "",
+  patientAge: "",
+  patientGender: "",
+  patientWegiht: "",
+  location: "", //google map marker
+  caseDescription: "",
+  medSpecialty: "", // filterable
+  orgName: "", // filterable
+  area: "", // filterable
+  governorate: "", // filterable
+};
+
+let doctorFilters = {
+  medSpecialty: "",
+  orgName: "",
+  area: "",
+  governorate: "",
+};
+
+let teacherFilters = {
+  subject: "",
+  area: "",
+  governorate: "",
+};
+
 export default initialFormData;
-export { donationReq, initialFormData, searchOptions, appliedFilters };
+export {
+  donationReq,
+  initialFormData,
+  searchOptions,
+  appliedFilters,
+  teacherDonationReq,
+  doctorDonationReq,
+  doctorFilters,
+  teacherFilters,
+};

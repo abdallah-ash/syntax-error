@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 import { ItemsList } from "./ItemsList";
-import { donationReq } from "./db";
+import { doctorDonationReq, donationReq, teacherDonationReq } from "./db";
 import { useNavigate } from "react-router-dom";
 
 // id: "donationReq",
@@ -35,15 +35,35 @@ import { useNavigate } from "react-router-dom";
 function AddDonationTest() {
   const navigate = useNavigate();
   const navigateToNewPage = () => {
-    navigate("/dash", { state: { donationRequests: allDonations } });
+    navigate("/dash", {
+      state: {
+        donationRequests: allDonations,
+        docRequests: allDoc,
+        teachRequests: allTeach,
+        type: type,
+      },
+    });
   };
 
   const [donation, setDonation] = useState(donationReq);
   const [allDonations, setAllDonations] = useState([]);
+  const [allDoc, setAllDoc] = useState([]);
+  const [allTeach, setAllTeach] = useState([]);
+  const [docDon, setDocDon] = useState(doctorDonationReq);
+  const [teacherDon, setTeacherDon] = useState(teacherDonationReq);
+  const [type, setType] = useState("donor");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDonation({ ...donation, [name]: value });
+  };
+  const handleChangeDoc = (e) => {
+    const { name, value } = e.target;
+    setDocDon({ ...docDon, [name]: value });
+  };
+  const handleChangeTeacher = (e) => {
+    const { name, value } = e.target;
+    setTeacherDon({ ...teacherDon, [name]: value });
   };
   const test = () => {
     console.log(allDonations);
@@ -51,9 +71,25 @@ function AddDonationTest() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setAllDonations([...allDonations, donation]);
+
     setDonation(donationReq);
     console.log(allDonations);
   };
+  const handleSubmitDoc = (e) => {
+    e.preventDefault();
+    setAllDoc([...allDoc, docDon]);
+    setDocDon(doctorDonationReq);
+    console.log(allDoc);
+    setType("doctor");
+  };
+  const handleSubmitTeacher = (e) => {
+    e.preventDefault();
+    setAllTeach([...allTeach, teacherDon]);
+    setTeacherDon(teacherDonationReq);
+    console.log(allTeach);
+    setType("teacher");
+  };
+
   const handleClothes = () => {
     setDonation({ ...donation, Clothes: true });
   };
@@ -84,6 +120,162 @@ function AddDonationTest() {
         CLICK ENTER TO CREATE THE EMPTY ARRAY THEN ENTER AGAIN TO ADD TO THE
         ARRAY
       </h1>
+      <form onSubmit={handleSubmitDoc}>
+        <h1>doc</h1>
+
+        <div>
+          <div>
+            <label>Patient Name:</label>
+            <input
+              type="text"
+              name="patientName"
+              value={docDon.patientName}
+              onChange={handleChangeDoc}
+            />
+          </div>
+          <div>
+            <label>Patient Age:</label>
+            <input
+              type="text"
+              name="patientAge"
+              value={docDon.patientAge}
+              onChange={handleChangeDoc}
+            />
+          </div>
+          <div>
+            <label>Patient Gender:</label>
+            <select
+              name="patientGender"
+              value={docDon.patientGender}
+              onChange={handleChangeDoc}
+            >
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label>Patient Weight:</label>
+            <input
+              type="text"
+              name="patientWeight"
+              value={docDon.patientWeight}
+              onChange={handleChangeDoc}
+            />
+          </div>
+          <div>
+            <label>Location:</label>
+            <input
+              type="text"
+              name="location"
+              value={docDon.location}
+              onChange={handleChangeDoc}
+              placeholder="Enter location coordinates"
+            />
+          </div>
+          <div>
+            <label>Case Description:</label>
+            <textarea
+              name="caseDescription"
+              value={docDon.caseDescription}
+              onChange={handleChangeDoc}
+            />
+          </div>
+          <div>
+            <label>Medical Specialty:</label>
+            <input
+              type="text"
+              name="medSpecialty"
+              value={docDon.medSpecialty}
+              onChange={handleChangeDoc}
+            />
+          </div>
+          <div>
+            <label>Organization Name:</label>
+            <input
+              type="text"
+              name="orgName"
+              value={docDon.orgName}
+              onChange={handleChangeDoc}
+            />
+          </div>
+          <div>
+            <label>Area:</label>
+            <input
+              type="text"
+              name="area"
+              value={docDon.area}
+              onChange={handleChangeDoc}
+            />
+          </div>
+          <div>
+            <label>Governorate:</label>
+            <input
+              type="text"
+              name="governorate"
+              value={docDon.governorate}
+              onChange={handleChangeDoc}
+            />
+          </div>
+        </div>
+
+        <button>Ok!</button>
+      </form>
+      <form onSubmit={handleSubmitTeacher}>
+        <h1>Teacher Donation Form</h1>
+
+        <div>
+          <div>
+            <label>Subject:</label>
+            <input
+              type="text"
+              name="subject"
+              value={teacherDon.subject}
+              onChange={handleChangeTeacher}
+            />
+          </div>
+          <div>
+            <label>Area:</label>
+            <input
+              type="text"
+              name="area"
+              value={teacherDon.area}
+              onChange={handleChangeTeacher}
+            />
+          </div>
+          <div>
+            <label>Governorate:</label>
+            <input
+              type="text"
+              name="governorate"
+              value={teacherDon.governorate}
+              onChange={handleChangeTeacher}
+            />
+          </div>
+          <div>
+            <label>Number of Students:</label>
+            <input
+              type="text"
+              name="noOfStudents"
+              value={teacherDon.noOfStudents}
+              onChange={handleChangeTeacher}
+            />
+          </div>
+          <div>
+            <label>Address:</label>
+            <input
+              type="text"
+              name="address"
+              value={teacherDon.address}
+              onChange={handleChangeTeacher}
+            />
+          </div>
+        </div>
+
+        <button type="submit">Ok!</button>
+      </form>
+
       <form onSubmit={handleSubmit}>
         <h1>Clothes</h1>
 

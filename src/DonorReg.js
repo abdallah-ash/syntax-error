@@ -20,7 +20,7 @@ function RegistrationForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    Navigate("/donor", { state: { formData } });
+    Navigate("/dash", { state: { type: formData.type } });
   };
 
   useEffect(() => {

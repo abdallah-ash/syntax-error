@@ -77,11 +77,6 @@ function DonorMain() {
           <FontAwesomeIcon icon={faFilter} />
         </button>
       </div>
-      <div>
-        {filteredDonationRequests.map((donationReq) => (
-          <ItemsList donationReq={donationReq} key={Math.random()} />
-        ))}
-      </div>
 
       {isFilterOpen && (
         <>
@@ -171,40 +166,40 @@ function DonorMain() {
                 <div>
                   <h3>Food</h3>
                   <label>
+                    Fruits and Vegetables :
                     <input
-                      type="checkbox"
-                      name="foodFruitsAndVegetables"
-                      checked={filters.foodFruitsAndVegetables}
+                      type="text"
+                      name="fruitsAndVegies"
+                      value={filters.fruitsAndVegies}
                       onChange={handleFilterChange}
                     />
-                    Fruits and Vegetables
                   </label>
                   <label>
+                    Canned Foods :
                     <input
-                      type="checkbox"
-                      name="foodCannedFoods"
-                      checked={filters.foodCannedFoods}
+                      type="text"
+                      name="cannedFood"
+                      value={filters.cannedFood}
                       onChange={handleFilterChange}
                     />
-                    Canned Foods
                   </label>
                   <label>
+                    Fresh Meals :
                     <input
-                      type="checkbox"
-                      name="foodFreshMeals"
-                      checked={filters.foodFreshMeals}
+                      type="text"
+                      name="freshMeals"
+                      value={filters.freshMeals}
                       onChange={handleFilterChange}
                     />
-                    Fresh Meals
                   </label>
                   <label>
+                    Baked Goods :
                     <input
-                      type="checkbox"
-                      name="foodBakedGoods"
-                      checked={filters.foodBakedGoods}
+                      type="text"
+                      name="bakedGoods"
+                      value={filters.bakedGoods}
                       onChange={handleFilterChange}
                     />
-                    Baked Goods
                   </label>
                 </div>
               )}
@@ -213,27 +208,27 @@ function DonorMain() {
                   <h3>Medical Supplies</h3>
                   <label>
                     <input
-                      type="checkbox"
-                      name="medicalSuppliesDevices"
-                      checked={filters.medicalSuppliesDevices}
+                      type="text"
+                      name="medDevice"
+                      value={filters.medDevice}
                       onChange={handleFilterChange}
                     />
                     Medical Devices
                   </label>
                   <label>
                     <input
-                      type="checkbox"
-                      name="medicalSuppliesEquipment"
-                      checked={filters.medicalSuppliesEquipment}
+                      type="text"
+                      name="medEquipment"
+                      value={filters.medEquipment}
                       onChange={handleFilterChange}
                     />
                     Medical Equipment
                   </label>
                   <label>
                     <input
-                      type="checkbox"
-                      name="medicalSuppliesMedication"
-                      checked={filters.medicalSuppliesMedication}
+                      type="text"
+                      name="medUse"
+                      value={filters.medUse}
                       onChange={handleFilterChange}
                     />
                     Medication (Medical Use)
@@ -285,6 +280,11 @@ function DonorMain() {
           </div>
         </>
       )}
+      <div>
+        {filteredDonationRequests.map((donationReq) => (
+          <ItemsList donationReq={donationReq} key={Math.random()} />
+        ))}
+      </div>
       {isCategoryOpen && (
         <div className="filter-modal">
           <button onClick={() => setIsCategoryOpen(false)}>Close</button>
