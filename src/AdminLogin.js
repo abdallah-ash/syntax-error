@@ -5,17 +5,26 @@ const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    //temp
-    if (username === 'admin' && password === 'password') {
-      onLogin(username);
+    
+    const Username = 'admin';
+    const Password = 'password';
+
+    if (username === Username && password === Password) {
+      onLogin(username); 
+      setRedirectToDashboard(true); // Redirect to dashboard
     } else {
       setError('Invalid username or password');
     }
   };
+
+  if (redirectToDashboard) {
+    return <Redirect to="/dashboard" />;
+  }
 
   return (
     <div>
@@ -43,26 +52,10 @@ const Login = ({ onLogin }) => {
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
-  ); 
+  );
 };
-const Login2 = () => {
-    const [loggedInUser, setLoggedInUser] = useState(null);
-  
-    const handleLogin = (username) => {
-      setLoggedInUser(username);
-    };
-  
-    return (
-      <div>
-        {loggedInUser ? (
-          <Redirect to="/dashboard" />
-        ) : (
-          <Login onLogin={handleLogin} />
-        )}
-      </div>
-    );
-  };
-  
-  export default Login2; 
+
+export default Login;
+
 
 //wwwwwwwwwww 
