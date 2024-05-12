@@ -74,9 +74,9 @@ let donationReq = {
 };
 
 let teacherDonationReq = {
-  subject: "balls", //filterable
-  area: "bigger balls", //filterable
-  governorate: "biggest balls", //filterable
+  subject: "", //filterable
+  area: "", //filterable
+  governorate: "", //filterable
   noOfStudents: "",
   address: "",
 };
@@ -106,6 +106,11 @@ let teacherFilters = {
   area: "",
   governorate: "",
 };
+
+const deliveryInfo ={
+ trans: "",
+ time: "",
+}
 
 export default initialFormData;
 export {

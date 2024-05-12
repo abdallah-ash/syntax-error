@@ -7,7 +7,6 @@ import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
-
 import DoctorItem from "./DoctorItem.js";
 import Login from "./Admintest.js"; 
 import Login2 from './Login2';
@@ -20,6 +19,8 @@ import ViewRegisteredOrganizations from './ViewRegisteredOrganizations';
 import ViewOrganizationDetails from './ViewOrganizationDetails';
 import DeleteAccount from './DeleteAccount';
 
+import TransportationOptions from "./deliveryperson";
+import Delivery from "./delivery";
 import {
   BrowserRouter as Router,
   Route,
@@ -46,6 +47,8 @@ root.render(
       <Route path="/registered-organizations" component={ViewRegisteredOrganizations} />
       <Route path="/view-organization-details" component={ViewOrganizationDetails} />
       <Route path="/delete-account" component={DeleteAccount} />
+        <Route path="/piss" element={<TransportationOptions />} />
+        <Route path="/piss2" element={<Delivery />} />
 
         <Route path="/doctor" element={<DoctorItem />} />
         {/* Add other routes as needed */}

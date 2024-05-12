@@ -61,6 +61,7 @@ function DonorMain() {
   return (
     <div className="donor-dashboard">
       <div className="search-bar">
+        <img src={process.env.PUBLIC_URL + '/logo.png'} alt=" logo duh"/>
         <input
           type="text"
           placeholder="Search..."
@@ -71,7 +72,6 @@ function DonorMain() {
           Category
         </button>
         <button
-          className="filter-button"
           onClick={() => setIsFilterOpen(!isFilterOpen)}
         >
           <FontAwesomeIcon icon={faFilter} />
@@ -82,8 +82,7 @@ function DonorMain() {
         <>
           <button onClick={applyFilters}>Apply Filters</button>
           <div className="filter-form-container">
-            <button onClick={() => setIsFilterOpen(false)}>Close</button>
-
+            
             <div className="filter-options">
               {category.Clothes && (
                 <div>
@@ -207,31 +206,40 @@ function DonorMain() {
                 <div>
                   <h3>Medical Supplies</h3>
                   <label>
+                  Medical Devices:
                     <input
                       type="text"
                       name="medDevice"
                       value={filters.medDevice}
                       onChange={handleFilterChange}
                     />
-                    Medical Devices
                   </label>
                   <label>
+                  Medical Equipment:
                     <input
                       type="text"
                       name="medEquipment"
                       value={filters.medEquipment}
                       onChange={handleFilterChange}
                     />
-                    Medical Equipment
                   </label>
                   <label>
+                  Medication:
+                    <input
+                      type="text"
+                      name="medUse"
+                      value={filters.medUse}
+                      onChange={handleFilterChange}
+                    /> 
+                  </label>
+                  <label>
+                  Medical Use:
                     <input
                       type="text"
                       name="medUse"
                       value={filters.medUse}
                       onChange={handleFilterChange}
                     />
-                    Medication (Medical Use)
                   </label>
                 </div>
               )}
@@ -252,6 +260,7 @@ function DonorMain() {
               {category.BloodDonations && (
                 <div>
                   <h3>Blood Donations</h3>
+                  <div>
                   <input
                     type="text"
                     name="bloodDonationsHospital"
@@ -259,6 +268,8 @@ function DonorMain() {
                     placeholder="Hospital"
                     onChange={handleFilterChange}
                   />
+                  </div>
+                  <div>
                   <input
                     type="text"
                     name="bloodDonationsGovernorate"
@@ -266,6 +277,7 @@ function DonorMain() {
                     placeholder="Governorate"
                     onChange={handleFilterChange}
                   />
+                  </div>
                   <input
                     type="text"
                     name="bloodDonationsArea"
@@ -276,6 +288,7 @@ function DonorMain() {
                 </div>
               )}
             </div>
+            <button onClick={() => setIsFilterOpen(false)}>Close</button>
             <button>Apply category</button>
           </div>
         </>
