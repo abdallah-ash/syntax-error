@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import "./index.css";
 import deliveryInfo from "./db";
+import { useNavigate } from "react-router-dom";
 
 function TransportationOptions() {
+  const navigate = useNavigate();
+  const navigateToNewPage = () => {
+    navigate("/dash", {
+      state: {
+        donationRequests: allDonations,
+      },
+    });
+  };
   const [transData, setTransData] = useState(deliveryInfo);
 
   const handleChange = (e) => {

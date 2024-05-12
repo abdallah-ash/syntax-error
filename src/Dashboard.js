@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+function Dashboards() {
   return (
     <div>
       <h2>Dashboard</h2>
@@ -68,4 +68,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboards;
