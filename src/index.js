@@ -17,7 +17,7 @@ import PasswordManagement from './PasswordManagement';
 import ViewRegisteredOrganizations from './ViewRegisteredOrganizations';
 import ViewOrganizationDetails from './ViewOrganizationDetails';
 import DeleteAccount from './DeleteAccount';
-
+import OrgDashboard from "./OrgDash.js";
 import TransportationOptions from "./deliveryperson";
 import Delivery from "./delivery";
 import {
@@ -47,7 +47,7 @@ root.render(
       <Route path="/delete-account" component={<DeleteAccount />} />
         <Route path="/piss" element={<TransportationOptions />} />
         <Route path="/piss2" element={<Delivery />} />
-
+        <Route path="/org" element={<OrgDashboard/>}/>
         <Route path="/doctor" element={<DoctorItem />} />
         {/* Add other routes as needed */}
       </Routes>
