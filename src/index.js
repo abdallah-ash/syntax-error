@@ -7,8 +7,16 @@ import DonorReg from "./DonorReg";
 import DonorMain from "./DonorMain";
 import ItemsList from "./ItemsList";
 import DonorDash from "./DonorDash.js";
-
 import DoctorItem from "./DoctorItem.js";
+import Login from "./AdminLogin.js"; 
+import Dashboards from './Dashboard';
+import OrganizationDonorList from './OrganizationDonorList';
+import SubmissionReview from './SubmissionReview';
+import ManageRequests from './ManageRequests';
+import PasswordManagement from './PasswordManagement';
+import ViewRegisteredOrganizations from './ViewRegisteredOrganizations';
+import ViewOrganizationDetails from './ViewOrganizationDetails';
+import DeleteAccount from './DeleteAccount';
 
 import TransportationOptions from "./deliveryperson";
 import Delivery from "./delivery";
@@ -28,6 +36,15 @@ root.render(
         <Route path="/list" element={<ItemsList />} />
         <Route path="/dash" element={<DonorDash />} />
         <Route path="/Test" element={<AddDonationTest />} />
+        <Route path="/adminlogin" element={<Login />} />
+      <Route path="/dashboard" component={<Dashboards />} />
+      <Route path="/organization-and-donor-lists" component={<OrganizationDonorList />} />
+      <Route path="/submission-review" component={<SubmissionReview />} />
+      <Route path="/manage-requests" component={<ManageRequests />} />
+      <Route path="/password-management" component={<PasswordManagement />} />
+      <Route path="/registered-organizations" component={<ViewRegisteredOrganizations />} />
+      <Route path="/view-organization-details" component={<ViewOrganizationDetails />} />
+      <Route path="/delete-account" component={<DeleteAccount />} />
         <Route path="/piss" element={<TransportationOptions />} />
         <Route path="/piss2" element={<Delivery />} />
 
