@@ -1,27 +1,30 @@
-
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Navigate, Redirect } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const [redirectToDashboard, setRedirectToDashboard] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    // Simulated user credentials
+    const dummyUsername = 'admin';
+    const dummyPassword = 'password';
 
-    const Username = 'admin';
-    const Password = 'password';
-
-    if (username === Username && password === Password) {
-      onLogin(username);
-      history.push('/dashboard'); //nav dashboard
+    if (username === dummyUsername && password === dummyPassword) {
+      onLogin(username); // Notify parent component about successful login
+      setRedirectToDashboard(true); // Redirect to dashboard
     } else {
       setError('Invalid username or password');
     }
   };
+
+  if (redirectToDashboard) {
+    return <Navigate to="/dashboard" />;
+  }
 
   return (
     <div>
@@ -53,3 +56,7 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
+
+
+
+//ww 
