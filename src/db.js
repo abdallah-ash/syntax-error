@@ -58,7 +58,7 @@ let donationReq = {
   season: "",
   schoolSupplies: "",
   category: "",
-  fruitsAndVegies: " ",
+  fruitsAndVegies: "",
   cannedFood: "",
   freshMeals: "",
   bakedGoods: "",
@@ -107,10 +107,10 @@ let teacherFilters = {
   governorate: "",
 };
 
-const deliveryInfo ={
- trans: "",
- time: "",
-}
+const deliveryInfo = {
+  trans: "",
+  time: "",
+};
 
 export default initialFormData;
 export {
