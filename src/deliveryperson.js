@@ -8,7 +8,6 @@ function TransportationOptions() {
   const navigate = useNavigate();
   const navigateToNewPage = () => {
     navigate("/dash", {
-      state: {},
     });
   };
   const [transData, setTransData] = useState(deliveryInfo);

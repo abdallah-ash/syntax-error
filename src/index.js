@@ -19,7 +19,7 @@ import ViewRegisteredOrganizations from "./ViewRegisteredOrganizations";
 import ViewOrganizationDetails from "./ViewOrganizationDetails";
 import DeleteAccount from "./DeleteAccount";
 import AdminDash from "./AdminDash.js";
-
+import OrgDashboard from "./OrgDash.js";
 import TransportationOptions from "./deliveryperson";
 import Delivery from "./delivery";
 import {
@@ -55,21 +55,21 @@ root.render(
           path="/organization-and-donor-lists"
           component={<OrganizationDonorList />}
         />
-        <Route path="/submission-review" component={<SubmissionReview />} />
-        <Route path="/manage-requests" component={<ManageRequests />} />
-        <Route path="/password-management" component={<PasswordManagement />} />
+        <Route path="/submission-review" element={<SubmissionReview />} />
+        <Route path="/manage-requests" element={<ManageRequests />} />
+        <Route path="/password-management" element={<PasswordManagement />} />
         <Route
           path="/registered-organizations"
-          component={<ViewRegisteredOrganizations />}
+          element={<ViewRegisteredOrganizations />}
         />
         <Route
           path="/view-organization-details"
-          component={<ViewOrganizationDetails />}
+          element={<ViewOrganizationDetails />}
         />
-        <Route path="/delete-account" component={<DeleteAccount />} />
-        <Route path="/piss" element={<TransportationOptions />} />
-        <Route path="/piss2" element={<Delivery />} />
-
+        <Route path="/delete-account" element={<DeleteAccount />} />
+        <Route path="/del" element={<TransportationOptions />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/org" element={<OrgDashboard/>}/>
         <Route path="/doctor" element={<DoctorItem />} />
         <Route path="/org" element={<DonorOrgList />} />
         {/* Add other routes as needed */}
